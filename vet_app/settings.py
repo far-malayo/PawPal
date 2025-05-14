@@ -37,7 +37,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    #Third-party apps or the rest django framework
+    'rest_framework',
+    'rest_framework.authtoken',  # For token authentication
+    
+    
+    
+    #Local apps
+    'users',
+    'pets',
 ]
+
+    # Django REST Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+    
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
